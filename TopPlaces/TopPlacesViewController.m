@@ -33,8 +33,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //NSString *test =  [self.photos objectAtIndex:section];
-    return 0;
+    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:self.photos];
+    NSArray *test2 = [TopPlacesFlickrFetcher sortCountries:test];
+    return [test [test2 [section]] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -43,11 +44,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    //NSDictionary *photo = self.photos[indexPath.row];
-
-        
-    //cell.textLabel.text = country;
-    //cell.detailTextLabel.text = city;
+    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:self.photos];
+    NSArray *test2 = [TopPlacesFlickrFetcher sortCountries:test];
+    NSDictionary *place = test[test2[indexPath.section]][indexPath.row];
+    cell.textLabel.text = [TopPlacesFlickrFetcher titleOfPlace:place];
+    cell.detailTextLabel.text = [TopPlacesFlickrFetcher subtitleOfPlace:place];
     
 
     return cell;
