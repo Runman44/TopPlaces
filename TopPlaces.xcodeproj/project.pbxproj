@@ -28,6 +28,7 @@
 		BBBD87C519110A0B00BA26C4 /* TopPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBD87C419110A0B00BA26C4 /* TopPlacesViewController.m */; };
 		BBBD87C819110ADC00BA26C4 /* PlacePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBD87C719110ADC00BA26C4 /* PlacePhotoViewController.m */; };
 		BBBD87CD19110CB100BA26C4 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBD87CC19110CB100BA26C4 /* FlickrFetcher.m */; };
+		BBCF2DE119180B8A0086775A /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCF2DE019180B8A0086775A /* ImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		BBBD87CA19110CB100BA26C4 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
 		BBBD87CB19110CB100BA26C4 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
 		BBBD87CC19110CB100BA26C4 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		BBCF2DDF19180B8A0086775A /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		BBCF2DE019180B8A0086775A /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				BBAB153F1916E7DE001CDDCF /* TopPhotoViewController.h */,
 				BBAB15401916E7DE001CDDCF /* TopPhotoViewController.m */,
 				BBBD87A01911098100BA26C4 /* Main_iPad.storyboard */,
+				BBCF2DDF19180B8A0086775A /* ImageViewController.h */,
+				BBCF2DE019180B8A0086775A /* ImageViewController.m */,
 				BBBD87A31911098100BA26C4 /* AwesomeViewController.h */,
 				BBBD87A41911098100BA26C4 /* AwesomeViewController.m */,
 				BBBD87A61911098100BA26C4 /* Images.xcassets */,
@@ -295,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCF2DE119180B8A0086775A /* ImageViewController.m in Sources */,
 				BBAB153E1916E799001CDDCF /* TopPhotoOfPlacesViewController.m in Sources */,
 				BBAB15411916E7DE001CDDCF /* TopPhotoViewController.m in Sources */,
 				BBBD879C1911098100BA26C4 /* AwesomeAppDelegate.m in Sources */,

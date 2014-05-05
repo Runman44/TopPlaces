@@ -8,6 +8,7 @@
 
 #import "TopPhotoOfPlacesViewController.h"
 #import "FlickrFetcher.h"
+#import "ImageViewController.h"
 
 @interface TopPhotoOfPlacesViewController ()
 
@@ -18,7 +19,6 @@
 - (void)setPhotos:(NSArray *)photos
 {
     _photos = photos;
-    NSLog(@"%s", "dus");
     [self.tableView reloadData];
 }
 
@@ -52,6 +52,26 @@
     }
     
     return cell;
+}
+
+- (void)prepareImageViewController:(ImageViewController *)tvc
+                toDisplayPhoto:(NSDictionary *)photo
+{
+    tvc.imageURL = [FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
+    #warning title moet net als hierboven goed worden geset.
+    tvc.title = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    if ([segue.identifier isEqualToString:@"picture"]) {
+        if([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
+            [self prepareImageViewController:segue.destinationViewController
+                          toDisplayPhoto:self.photos[indexPath.row]];
+        }
+        
+    }
 }
 
 /*
