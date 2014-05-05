@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BBA93F23191433CE00DC8B59 /* TopPlacesFlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA93F22191433CE00DC8B59 /* TopPlacesFlickrFetcher.m */; };
+		BBAB153E1916E799001CDDCF /* TopPhotoOfPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAB153D1916E799001CDDCF /* TopPhotoOfPlacesViewController.m */; };
+		BBAB15411916E7DE001CDDCF /* TopPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAB15401916E7DE001CDDCF /* TopPhotoViewController.m */; };
 		BBBD878C1911098100BA26C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBD878B1911098100BA26C4 /* Foundation.framework */; };
 		BBBD878E1911098100BA26C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBD878D1911098100BA26C4 /* CoreGraphics.framework */; };
 		BBBD87901911098100BA26C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBD878F1911098100BA26C4 /* UIKit.framework */; };
@@ -41,6 +43,10 @@
 /* Begin PBXFileReference section */
 		BBA93F21191433CE00DC8B59 /* TopPlacesFlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopPlacesFlickrFetcher.h; sourceTree = "<group>"; };
 		BBA93F22191433CE00DC8B59 /* TopPlacesFlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPlacesFlickrFetcher.m; sourceTree = "<group>"; };
+		BBAB153C1916E799001CDDCF /* TopPhotoOfPlacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopPhotoOfPlacesViewController.h; sourceTree = "<group>"; };
+		BBAB153D1916E799001CDDCF /* TopPhotoOfPlacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPhotoOfPlacesViewController.m; sourceTree = "<group>"; };
+		BBAB153F1916E7DE001CDDCF /* TopPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopPhotoViewController.h; sourceTree = "<group>"; };
+		BBAB15401916E7DE001CDDCF /* TopPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPhotoViewController.m; sourceTree = "<group>"; };
 		BBBD87881911098100BA26C4 /* TopPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBD878B1911098100BA26C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BBBD878D1911098100BA26C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +139,10 @@
 				BBBD87C419110A0B00BA26C4 /* TopPlacesViewController.m */,
 				BBBD87C619110ADC00BA26C4 /* PlacePhotoViewController.h */,
 				BBBD87C719110ADC00BA26C4 /* PlacePhotoViewController.m */,
+				BBAB153C1916E799001CDDCF /* TopPhotoOfPlacesViewController.h */,
+				BBAB153D1916E799001CDDCF /* TopPhotoOfPlacesViewController.m */,
+				BBAB153F1916E7DE001CDDCF /* TopPhotoViewController.h */,
+				BBAB15401916E7DE001CDDCF /* TopPhotoViewController.m */,
 				BBBD87A01911098100BA26C4 /* Main_iPad.storyboard */,
 				BBBD87A31911098100BA26C4 /* AwesomeViewController.h */,
 				BBBD87A41911098100BA26C4 /* AwesomeViewController.m */,
@@ -285,6 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAB153E1916E799001CDDCF /* TopPhotoOfPlacesViewController.m in Sources */,
+				BBAB15411916E7DE001CDDCF /* TopPhotoViewController.m in Sources */,
 				BBBD879C1911098100BA26C4 /* AwesomeAppDelegate.m in Sources */,
 				BBBD87C819110ADC00BA26C4 /* PlacePhotoViewController.m in Sources */,
 				BBBD87981911098100BA26C4 /* main.m in Sources */,

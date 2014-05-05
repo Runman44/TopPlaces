@@ -7,7 +7,6 @@
 //
 
 #import "TopPlacesViewController.h"
-#import "PlacePhotoViewController.h"
 
 @interface PlacePhotoViewController : TopPlacesViewController
 

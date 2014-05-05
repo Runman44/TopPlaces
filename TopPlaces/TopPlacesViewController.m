@@ -8,6 +8,7 @@
 
 #import "TopPlacesViewController.h"
 #import "TopPlacesFlickrFetcher.h"
+#import "TopPhotoOfPlacesViewController.h"
 
 @interface TopPlacesViewController ()
 
@@ -25,15 +26,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:self.photos];
+    NSArray *test0 = [TopPlacesFlickrFetcher sortPlaces:self.photos];
+    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:test0];
     NSArray *test2 = [TopPlacesFlickrFetcher sortCountries:test];
-    NSLog(@"%d", [test2 count]);
     return [test2 count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:self.photos];
+    NSArray *test0 = [TopPlacesFlickrFetcher sortPlaces:self.photos];
+    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:test0];
     NSArray *test2 = [TopPlacesFlickrFetcher sortCountries:test];
     return [test [test2 [section]] count];
 }
@@ -44,8 +46,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:self.photos];
+    NSArray *test0 = [TopPlacesFlickrFetcher sortPlaces:self.photos];
+    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:test0];
     NSArray *test2 = [TopPlacesFlickrFetcher sortCountries:test];
+    
     NSDictionary *place = test[test2[indexPath.section]][indexPath.row];
     cell.textLabel.text = [TopPlacesFlickrFetcher titleOfPlace:place];
     cell.detailTextLabel.text = [TopPlacesFlickrFetcher subtitleOfPlace:place];
@@ -56,11 +60,34 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:self.photos];
+    NSArray *test0 = [TopPlacesFlickrFetcher sortPlaces:self.photos];
+    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:test0];
     NSArray *test2 = [TopPlacesFlickrFetcher sortCountries:test];
     return test2[section];
 }
 
+- (void)preparePhotosTVC:(TopPhotoOfPlacesViewController *)tvc
+                forPlace:(NSDictionary *)place
+{
+    tvc.place = place;
+    tvc.title = [TopPlacesFlickrFetcher titleOfPlace:place];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSArray *test0 = [TopPlacesFlickrFetcher sortPlaces:self.photos];
+    NSDictionary *test = [TopPlacesFlickrFetcher uniqueCountries:test0];
+    NSArray *test2 = [TopPlacesFlickrFetcher sortCountries:test];
+
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    if ([segue.identifier isEqualToString:@"pictures"]) {
+        if([segue.destinationViewController isKindOfClass:[TopPhotoOfPlacesViewController class]]){
+            [self preparePhotosTVC:segue.destinationViewController
+                          forPlace:test[test2[indexPath.section]][indexPath.row]];
+        }
+
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
