@@ -21,8 +21,9 @@
 	[self fetchPhotos];
 }
 
-- (void) fetchPhotos
+- (IBAction) fetchPhotos
 {
+    [self.refreshControl beginRefreshing];
     NSURL *url = [FlickrFetcher URLforPhotosInPlace:[self.place valueForKeyPath:FLICKR_PLACE_ID] maxResults:50];
     dispatch_queue_t fetchPhoto = dispatch_queue_create("photos in place", NULL);
     dispatch_async(fetchPhoto, ^(void){
@@ -30,6 +31,7 @@
         NSDictionary *propertyListResults = [NSJSONSerialization JSONObjectWithData:jsonResults options:0 error:NULL];
         NSArray *photos = [propertyListResults valueForKeyPath:FLICKR_RESULTS_PHOTOS];
         dispatch_async(dispatch_get_main_queue(), ^(void){
+            [self.refreshControl endRefreshing];
             self.photos = photos;
         });
     });

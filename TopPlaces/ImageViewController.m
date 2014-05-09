@@ -8,27 +8,47 @@
 
 #import "ImageViewController.h"
 
-@interface ImageViewController ()
-@property (weak, nonatomic) IBOutlet UIScrollView *scroll;
+@interface ImageViewController () <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
 @implementation ImageViewController
 
+- (void) setScrollView:(UIScrollView *)scrollView{
+    _scrollView = scrollView;
+    _scrollView.minimumZoomScale=0.5;
+    _scrollView.maximumZoomScale=3.0;
+    _scrollView.delegate = self;
+    self.scrollView.contentSize = self.imageView ? self.imageView.image.size : CGSizeZero;
+ 
+}
 
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.imageView;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     NSData *test = [NSData dataWithContentsOfURL:self.imageURL];
-    UIImage *image = [UIImage imageWithData:test];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+     NSData *imageData = [NSData dataWithContentsOfURL:self.imageURL];
 
-    [self.view addSubview:imageView];
-
-    [self.scroll setContentSize:image.size];
+    self.imageView.image = [UIImage imageWithData:imageData];
+    self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    CGRect scrollViewFrame = self.scrollView.frame;
+    CGFloat scaleWidth = scrollViewFrame.size.width / self.scrollView.contentSize.width;
+    CGFloat scaleHeight = scrollViewFrame.size.height / self.scrollView.contentSize.height;
+    CGFloat minScale = MIN(scaleWidth, scaleHeight);
+    self.scrollView.zoomScale = minScale;
+}
+
+
 
 
 @end

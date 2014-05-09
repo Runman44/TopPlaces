@@ -7,7 +7,7 @@
 //
 
 #import "TopPhotoOfPlacesViewController.h"
-#import "FlickrFetcher.h"
+#import "TopPlacesFlickrFetcher.h"
 #import "ImageViewController.h"
 
 @interface TopPhotoOfPlacesViewController ()
@@ -38,28 +38,20 @@
     
     // Configure the cell...
     NSDictionary *photo = self.photos[indexPath.row];
-    NSString *title = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
-    NSString *subtitle = [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
-
-    if ([title length] == 0){
-        cell.textLabel.text = subtitle;
-    } else {
-        cell.textLabel.text = title;
-        cell.detailTextLabel.text = subtitle;
-    }
-    if ([title length] == 0 && [subtitle length] == 0){
-        cell.textLabel.text = @"Unknown";
-    }
     
+    cell.textLabel.text = [TopPlacesFlickrFetcher titleOfPhoto:photo];
+    cell.detailTextLabel.text = [TopPlacesFlickrFetcher subtitleOfPhoto:photo];
+
     return cell;
 }
 
 - (void)prepareImageViewController:(ImageViewController *)tvc
-                toDisplayPhoto:(NSDictionary *)photo
+                    toDisplayPhoto:(NSDictionary *)photo
 {
-    tvc.imageURL = [FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
-    #warning title moet net als hierboven goed worden geset.
-    tvc.title = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
+    tvc.imageURL = [TopPlacesFlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
+    tvc.title = [TopPlacesFlickrFetcher titleOfPhoto:photo];
+
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -73,6 +65,7 @@
         
     }
 }
+
 
 /*
 // Override to support conditional editing of the table view.
