@@ -1,30 +1,29 @@
 //
-//  TopPhotoOfPlacesViewController.m
+//  MostRecentTableViewController.m
 //  TopPlaces
 //
-//  Created by Dennis Anderson on 5/4/14.
+//  Created by Dennis Anderson on 5/9/14.
 //  Copyright (c) 2014 MrAnderson. All rights reserved.
 //
 
-#import "TopPhotoOfPlacesViewController.h"
-#import "TopPlacesFlickrFetcher.h"
-#import "ImageViewController.h"
+#import "MostRecentTableViewController.h"
+#import "TopPlacesFlickrFetcher.h" 
 #import "RecentPhotos.h"
 
-@interface TopPhotoOfPlacesViewController ()
+@interface MostRecentTableViewController ()
 
 @end
 
-@implementation TopPhotoOfPlacesViewController
+@implementation MostRecentTableViewController
 
-- (void)setPhotos:(NSArray *)photos
+- (void)viewDidLoad
 {
-    _photos = photos;
+    [super viewDidLoad];
+    self.photos = [RecentPhotos allPhotos];
     [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -34,38 +33,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"image";
+    static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
     NSDictionary *photo = self.photos[indexPath.row];
-    
-    cell.textLabel.text = [TopPlacesFlickrFetcher titleOfPhoto:photo];
-    cell.detailTextLabel.text = [TopPlacesFlickrFetcher subtitleOfPhoto:photo];
-
+    // Configure the cell...
+    cell.textLabel.text = [TopPlacesFlickrFetcher titleOfPlace:photo];
+    cell.detailTextLabel.text = [TopPlacesFlickrFetcher subtitleOfPlace:photo];
     return cell;
 }
-
-- (void)prepareImageViewController:(ImageViewController *)tvc
-                    toDisplayPhoto:(NSDictionary *)photo
-{
-    tvc.imageData = photo;
-    tvc.title = [TopPlacesFlickrFetcher titleOfPhoto:photo];
-    [RecentPhotos addPhoto:photo];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    if ([segue.identifier isEqualToString:@"picture"]) {
-        if([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
-            [self prepareImageViewController:segue.destinationViewController
-                          toDisplayPhoto:self.photos[indexPath.row]];
-        }
-        
-    }
-}
-
 
 /*
 // Override to support conditional editing of the table view.

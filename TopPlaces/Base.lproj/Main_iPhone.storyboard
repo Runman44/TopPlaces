@@ -124,8 +124,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3aW-8Z-1mW">
-                                <rect key="frame" x="0.0" y="0.0" width="321" height="519"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aW-8Z-1mW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zwh-1l-9di">
@@ -135,23 +135,37 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="au8-jY-dVm">
+                                <rect key="frame" x="142" y="241" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3aW-8Z-1mW" secondAttribute="trailing" id="8hk-WY-f7c"/>
+                            <constraint firstItem="3aW-8Z-1mW" firstAttribute="leading" secondItem="Ulx-Di-Vc1" secondAttribute="leading" id="BF0-dj-0Ec"/>
+                            <constraint firstAttribute="centerY" secondItem="au8-jY-dVm" secondAttribute="centerY" id="RFa-jt-Toa"/>
+                            <constraint firstAttribute="centerX" secondItem="au8-jY-dVm" secondAttribute="centerX" id="eyn-KG-482"/>
+                            <constraint firstItem="3aW-8Z-1mW" firstAttribute="centerY" secondItem="au8-jY-dVm" secondAttribute="centerY" id="ha6-yn-TRc"/>
+                            <constraint firstItem="3aW-8Z-1mW" firstAttribute="top" secondItem="Ulx-Di-Vc1" secondAttribute="top" id="lTA-rc-xg9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4iB-cS-a5J"/>
                     <connections>
                         <outlet property="imageView" destination="Zwh-1l-9di" id="m0n-nw-elP"/>
                         <outlet property="scrollView" destination="3aW-8Z-1mW" id="NpC-X0-Kty"/>
+                        <outlet property="spinner" destination="au8-jY-dVm" id="E06-sM-EAl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgc-lK-sdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2038" y="-264"/>
         </scene>
-        <!--Table View Controller - Most Recent-->
+        <!--Most Recent Table View Controller - Most Recent-->
         <scene sceneID="m7U-ZA-YLO">
             <objects>
-                <tableViewController id="ToU-4M-fEG" sceneMemberID="viewController">
+                <tableViewController id="ToU-4M-fEG" customClass="MostRecentTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zaz-cW-jnM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
