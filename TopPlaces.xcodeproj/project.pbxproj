@@ -144,6 +144,7 @@
 			children = (
 				BBBD87C919110CB100BA26C4 /* Flickr Fetcher */,
 				BBBD879D1911098100BA26C4 /* Main_iPhone.storyboard */,
+				BBBD87A01911098100BA26C4 /* Main_iPad.storyboard */,
 				BBC154AE191D4A0C004FAB01 /* MostRecentTableViewController.h */,
 				BBC154AF191D4A0C004FAB01 /* MostRecentTableViewController.m */,
 				BBC154B1191D4D49004FAB01 /* RecentPhotos.h */,
@@ -156,7 +157,6 @@
 				BBAB153D1916E799001CDDCF /* TopPhotoOfPlacesViewController.m */,
 				BBAB153F1916E7DE001CDDCF /* TopPhotoViewController.h */,
 				BBAB15401916E7DE001CDDCF /* TopPhotoViewController.m */,
-				BBBD87A01911098100BA26C4 /* Main_iPad.storyboard */,
 				BBCF2DDF19180B8A0086775A /* ImageViewController.h */,
 				BBCF2DE019180B8A0086775A /* ImageViewController.m */,
 				BBBD87A31911098100BA26C4 /* AwesomeViewController.h */,

@@ -48,6 +48,15 @@
     return cell;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id detail = self.splitViewController.viewControllers[1];
+    if ([detail isKindOfClass:[UINavigationController class]]) {
+        detail = [((UINavigationController *)detail).viewControllers firstObject];
+    }
+    [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+}
+
 - (void)prepareImageViewController:(ImageViewController *)tvc
                     toDisplayPhoto:(NSDictionary *)photo
 {

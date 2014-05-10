@@ -66,6 +66,7 @@
     return test2[section];
 }
 
+
 - (void)preparePhotosTVC:(TopPhotoOfPlacesViewController *)tvc
                 forPlace:(NSDictionary *)place
 {

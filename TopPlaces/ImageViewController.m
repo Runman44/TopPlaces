@@ -9,7 +9,7 @@
 #import "ImageViewController.h"
 #import "TopPlacesFlickrFetcher.h"
 
-@interface ImageViewController () <UIScrollViewDelegate>
+@interface ImageViewController () <UIScrollViewDelegate, UISplitViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -45,23 +45,48 @@
         NSURL *imageURL = [TopPlacesFlickrFetcher URLforPhoto:self.imageData format:FlickrPhotoFormatLarge];
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
         dispatch_async(dispatch_get_main_queue(), ^(void){
+            //self.scrollView.zoomScale = 1.0;
             self.imageView.image = [UIImage imageWithData:imageData];
+            
             self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
+            [self setZoomScale];
             [self.spinner stopAnimating];
         });
     });
 }
 
-#warning de scaling werkt nog niet lekker ! 
-#warning zoom in werkt ook nog niet lekkkuur !!
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+- (void) setZoomScale
+{
     CGRect scrollViewFrame = self.scrollView.frame;
     CGFloat scaleWidth = scrollViewFrame.size.width / self.scrollView.contentSize.width;
     CGFloat scaleHeight = scrollViewFrame.size.height / self.scrollView.contentSize.height;
     CGFloat minScale = MIN(scaleWidth, scaleHeight);
     self.scrollView.zoomScale = minScale;
+
+
+}
+#warning de scaling werkt nog niet lekker ! 
+#warning zoom in werkt ook nog niet lekkkuur !!
+
+- (void) awakeFromNib
+{
+    self.splitViewController.delegate = self;
+}
+
+- (BOOL) splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation
+{
+    return UIInterfaceOrientationIsPortrait(orientation);
+}
+
+- (void) splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title = aViewController.title;
+    self.navigationItem.leftBarButtonItem = barButtonItem;
+}
+
+- (void) splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    self.navigationItem.leftBarButtonItem = nil;
 }
 
 
