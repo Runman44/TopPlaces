@@ -9,6 +9,7 @@
 #import "MostRecentTableViewController.h"
 #import "TopPlacesFlickrFetcher.h" 
 #import "RecentPhotos.h"
+#import "ImageViewController.h"
 
 @interface MostRecentTableViewController ()
 
@@ -20,6 +21,7 @@
 {
     [super viewDidLoad];
     self.photos = [RecentPhotos allPhotos];
+    NSLog(@"%@", self.photos);
     [self.tableView reloadData];
 }
 
@@ -33,14 +35,34 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Cell Recent";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSDictionary *photo = self.photos[indexPath.row];
     // Configure the cell...
-    cell.textLabel.text = [TopPlacesFlickrFetcher titleOfPlace:photo];
-    cell.detailTextLabel.text = [TopPlacesFlickrFetcher subtitleOfPlace:photo];
+    NSLog(@"%@", [TopPlacesFlickrFetcher subtitleOfPhoto:photo]);
+    cell.textLabel.text = [TopPlacesFlickrFetcher titleOfPhoto:photo];
+    cell.detailTextLabel.text = [TopPlacesFlickrFetcher subtitleOfPhoto:photo];
     return cell;
+}
+
+- (void)prepareImageViewController:(ImageViewController *)tvc
+                    toDisplayPhoto:(NSDictionary *)photo
+{
+    tvc.imageData = photo;
+    tvc.title = [TopPlacesFlickrFetcher titleOfPhoto:photo];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    if ([segue.identifier isEqualToString:@"picture"]) {
+        if([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
+            [self prepareImageViewController:segue.destinationViewController
+                              toDisplayPhoto:self.photos[indexPath.row]];
+        }
+        
+    }
 }
 
 /*

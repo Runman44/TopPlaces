@@ -21,6 +21,19 @@
 }
 
 + (void) addPhoto:(NSDictionary *)photo{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
+    // inside the prefs the object is a NSArray. Thats why mutablecopy is applied so
+    // insertObject will work
+    NSMutableArray *photos = [[prefs objectForKey:@"keyToLookupPhotos"] mutableCopy];
+    if (!photos) {
+        photos = [NSMutableArray array];
+    }
+    [photos insertObject:photo atIndex:0];
+    if ([photos count] > 20){
+        [photos removeLastObject];
+    }
+    [prefs setObject:photos forKey:@"keyToLookupPhotos"];
+    [prefs synchronize];
 }
 @end
