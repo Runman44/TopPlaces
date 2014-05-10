@@ -127,13 +127,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aW-8Z-1mW">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zwh-1l-9di">
-                                        <rect key="frame" x="0.0" y="0.0" width="321" height="519"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <gestureRecognizers/>
-                                    </imageView>
-                                </subviews>
                             </scrollView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="au8-jY-dVm">
                                 <rect key="frame" x="142" y="241" width="37" height="37"/>
@@ -153,7 +146,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="4iB-cS-a5J"/>
                     <connections>
-                        <outlet property="imageView" destination="Zwh-1l-9di" id="m0n-nw-elP"/>
                         <outlet property="scrollView" destination="3aW-8Z-1mW" id="NpC-X0-Kty"/>
                         <outlet property="spinner" destination="au8-jY-dVm" id="E06-sM-EAl"/>
                     </connections>

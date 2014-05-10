@@ -12,7 +12,8 @@
 @interface ImageViewController () <UIScrollViewDelegate, UISplitViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIImage *image;
 
 @end
 
@@ -26,6 +27,35 @@
     self.scrollView.contentSize = self.imageView ? self.imageView.image.size : CGSizeZero;
 }
 
+- (void) setImageData:(NSDictionary *)imageData{
+    _imageData = imageData;
+    [self fetch];
+}
+
+- (UIImageView *)imageView
+{
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] init];
+    }
+    return _imageView;
+}
+
+- (UIImage *)image
+{
+    return self.imageView.image;
+}
+
+- (void)setImage:(UIImage *)image
+{
+    self.scrollView.zoomScale = 1.0;
+    self.imageView.image = image;
+    [self.imageView sizeToFit];
+    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
+    [self.spinner stopAnimating];
+}
+
+
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.imageView;
@@ -34,7 +64,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self fetch];
+    [self.scrollView addSubview:self.imageView];
+    
 
 }
 
@@ -45,12 +76,7 @@
         NSURL *imageURL = [TopPlacesFlickrFetcher URLforPhoto:self.imageData format:FlickrPhotoFormatLarge];
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
         dispatch_async(dispatch_get_main_queue(), ^(void){
-            //self.scrollView.zoomScale = 1.0;
-            self.imageView.image = [UIImage imageWithData:imageData];
-            
-            self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
-            //[self setZoomScale];
-            [self.spinner stopAnimating];
+            self.image = [UIImage imageWithData:imageData];;
         });
     });
 }
@@ -62,12 +88,11 @@
     CGFloat scaleHeight = scrollViewFrame.size.height / self.scrollView.contentSize.height;
     CGFloat minScale = MIN(scaleWidth, scaleHeight);
     self.scrollView.zoomScale = minScale;
-
-
 }
+
 #warning de scaling werkt nog niet lekker ! 
-#warning zoom in werkt ook nog niet lekkkuur !!
-#warning iPad ziet de foto genees
+#warning zoom in werkt ook nog niet lekkkuur !
+#warning barButton wijzigt niet altijd !
 
 - (void) awakeFromNib
 {
