@@ -54,7 +54,9 @@
     if ([detail isKindOfClass:[UINavigationController class]]) {
         detail = [((UINavigationController *)detail).viewControllers firstObject];
     }
-    [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+    if ([detail isKindOfClass:[ImageViewController class]]){
+        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+    }
 }
 
 - (void)prepareImageViewController:(ImageViewController *)tvc

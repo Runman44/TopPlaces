@@ -49,7 +49,7 @@
             self.imageView.image = [UIImage imageWithData:imageData];
             
             self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
-            [self setZoomScale];
+            //[self setZoomScale];
             [self.spinner stopAnimating];
         });
     });
@@ -67,6 +67,7 @@
 }
 #warning de scaling werkt nog niet lekker ! 
 #warning zoom in werkt ook nog niet lekkkuur !!
+#warning iPad ziet de foto genees
 
 - (void) awakeFromNib
 {
@@ -80,7 +81,14 @@
 
 - (void) splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
 {
-    barButtonItem.title = aViewController.title;
+    UIViewController *master = aViewController;
+    if ([master isKindOfClass:[UITabBarController class]]) {
+        master = ((UITabBarController *)master).selectedViewController;
+    }
+    if ([master isKindOfClass:[UINavigationController class]]) {
+        master = ((UINavigationController *)master).topViewController;
+    }
+    barButtonItem.title = master.title;
     self.navigationItem.leftBarButtonItem = barButtonItem;
 }
 
