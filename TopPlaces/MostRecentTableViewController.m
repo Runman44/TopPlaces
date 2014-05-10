@@ -17,13 +17,15 @@
 
 @implementation MostRecentTableViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+
+
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.photos = [RecentPhotos allPhotos];
-    NSLog(@"%@", self.photos);
     [self.tableView reloadData];
+
 }
+
 
 #pragma mark - Table view data source
 
@@ -40,7 +42,7 @@
     
     NSDictionary *photo = self.photos[indexPath.row];
     // Configure the cell...
-    NSLog(@"%@", [TopPlacesFlickrFetcher subtitleOfPhoto:photo]);
+    
     cell.textLabel.text = [TopPlacesFlickrFetcher titleOfPhoto:photo];
     cell.detailTextLabel.text = [TopPlacesFlickrFetcher subtitleOfPhoto:photo];
     return cell;
