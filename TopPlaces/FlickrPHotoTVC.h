@@ -1,5 +1,5 @@
 //
-//  AwesomeViewController.h
+//  TopPlacesViewController.h
 //  TopPlaces
 //
 //  Created by Dennis Anderson on 4/30/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AwesomeViewController : UIViewController
-
+@interface FlickrPhotoTVC : UITableViewController
+@property (nonatomic, strong) NSArray *photos;
 @end

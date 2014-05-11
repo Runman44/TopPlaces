@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 MrAnderson. All rights reserved.
 //
 
-#import "TopPhotoOfPlacesViewController.h"
+#import "PlacesTVC.h"
 
-@interface TopPhotoViewController : TopPhotoOfPlacesViewController
+@interface RecentPlacesTVC : PlacesTVC
 
 @end

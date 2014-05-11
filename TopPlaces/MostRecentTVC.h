@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MostRecentTableViewController : UITableViewController
+@interface MostRecentTVC : UITableViewController
 @property (nonatomic, strong) NSArray *photos; 
 @end

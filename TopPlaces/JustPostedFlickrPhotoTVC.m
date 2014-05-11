@@ -1,19 +1,19 @@
 //
-//  TopPhotoViewController.m
+//  PlacePhotoViewController.m
 //  TopPlaces
 //
-//  Created by Dennis Anderson on 5/4/14.
+//  Created by Dennis Anderson on 4/30/14.
 //  Copyright (c) 2014 MrAnderson. All rights reserved.
 //
 
-#import "TopPhotoViewController.h"
+#import "JustPostedFlickrPhotoTVC.h"
 #import "FlickrFetcher.h"
 
-@interface TopPhotoViewController ()
+@interface JustPostedFlickrPhotoTVC ()
 
 @end
 
-@implementation TopPhotoViewController
+@implementation JustPostedFlickrPhotoTVC
 
 - (void)viewDidLoad
 {
@@ -21,21 +21,22 @@
 	[self fetchPhotos];
 }
 
-- (IBAction) fetchPhotos
+- (IBAction)fetchPhotos
 {
     [self.refreshControl beginRefreshing];
-    dispatch_queue_t fetchPhoto = dispatch_queue_create("photos in place", NULL);
+    NSURL *url = [FlickrFetcher URLforTopPlaces];
+    dispatch_queue_t fetchPhoto = dispatch_queue_create("flickr fetcher", NULL);
     dispatch_async(fetchPhoto, ^(void){
-        NSURL *url = [FlickrFetcher URLforPhotosInPlace:[self.place valueForKeyPath:FLICKR_PLACE_ID] maxResults:50];
         NSData *jsonResults = [NSData dataWithContentsOfURL:url];
         NSDictionary *propertyListResults = [NSJSONSerialization JSONObjectWithData:jsonResults options:0 error:NULL];
-        NSArray *photos = [propertyListResults valueForKeyPath:FLICKR_RESULTS_PHOTOS];
+        NSArray *photos = [propertyListResults valueForKeyPath:FLICKR_RESULTS_PLACES];
         dispatch_async(dispatch_get_main_queue(), ^(void){
             [self.refreshControl endRefreshing];
             self.photos = photos;
         });
     });
-    
 }
+
+
 
 @end

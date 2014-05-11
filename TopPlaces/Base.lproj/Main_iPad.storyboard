@@ -18,10 +18,10 @@
             </objects>
             <point key="canvasLocation" x="432" y="-67"/>
         </scene>
-        <!--Place Photo View Controller - Places-->
+        <!--Just Posted Flickr PhotoTVC - Places-->
         <scene sceneID="XcP-QQ-qvf">
             <objects>
-                <tableViewController id="g61-zM-7mp" customClass="PlacePhotoViewController" sceneMemberID="viewController">
+                <tableViewController id="g61-zM-7mp" customClass="JustPostedFlickrPhotoTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="HVa-7x-tS6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="803"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="2772" y="-1308"/>
         </scene>
-        <!--Top Photo View Controller - Top 50 Images-->
+        <!--Recent PlacesTVC - Top 50 Images-->
         <scene sceneID="JDw-V0-Y5x">
             <objects>
-                <tableViewController id="x5C-m8-069" customClass="TopPhotoViewController" sceneMemberID="viewController">
+                <tableViewController id="x5C-m8-069" customClass="RecentPlacesTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jsR-K0-F2t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="803"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="2754" y="1096"/>
         </scene>
-        <!--Most Recent Table View Controller - Most Recent-->
+        <!--Most RecentTVC - Most Recent-->
         <scene sceneID="Icd-wH-PZK">
             <objects>
-                <tableViewController id="qgm-0K-xa6" customClass="MostRecentTableViewController" sceneMemberID="viewController">
+                <tableViewController id="qgm-0K-xa6" customClass="MostRecentTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MMr-7C-YNh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="803"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,10 +213,10 @@
             </objects>
             <point key="canvasLocation" x="2772" y="-274"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller - Back-->
         <scene sceneID="6Ie-0A-ab6">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="t5g-IL-fng" sceneMemberID="viewController">
+                <tabBarController title="Back" automaticallyAdjustsScrollViewInsets="NO" id="t5g-IL-fng" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="9d1-0F-RqV">
@@ -270,10 +270,10 @@
             </objects>
             <point key="canvasLocation" x="2247" y="-274"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Image View-->
         <scene sceneID="IwJ-4v-op1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zti-SZ-ywR" sceneMemberID="viewController">
+                <navigationController title="Image View" automaticallyAdjustsScrollViewInsets="NO" id="zti-SZ-ywR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7EK-WL-4Lg">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>

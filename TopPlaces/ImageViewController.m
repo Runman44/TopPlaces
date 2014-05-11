@@ -92,7 +92,8 @@
 
 #warning de scaling werkt nog niet lekker ! 
 #warning zoom in werkt ook nog niet lekkkuur !
-#warning barButton wijzigt niet altijd !
+
+#pragma SplitViewController - Delegate
 
 - (void) awakeFromNib
 {
@@ -106,14 +107,7 @@
 
 - (void) splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
 {
-    UIViewController *master = aViewController;
-    if ([master isKindOfClass:[UITabBarController class]]) {
-        master = ((UITabBarController *)master).selectedViewController;
-    }
-    if ([master isKindOfClass:[UINavigationController class]]) {
-        master = ((UINavigationController *)master).topViewController;
-    }
-    barButtonItem.title = master.title;
+    barButtonItem.title = aViewController.title;
     self.navigationItem.leftBarButtonItem = barButtonItem;
 }
 

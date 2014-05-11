@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 MrAnderson. All rights reserved.
 //
 
-#import "TopPhotoOfPlacesViewController.h"
+#import "PlacesTVC.h"
 #import "TopPlacesFlickrFetcher.h"
 #import "ImageViewController.h"
 #import "RecentPhotos.h"
 
-@interface TopPhotoOfPlacesViewController ()
+@interface PlacesTVC ()
 
 @end
 
-@implementation TopPhotoOfPlacesViewController
+@implementation PlacesTVC
 
 - (void)setPhotos:(NSArray *)photos
 {

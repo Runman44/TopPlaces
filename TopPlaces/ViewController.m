@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 MrAnderson. All rights reserved.
 //
 
-#import "AwesomeViewController.h"
+#import "ViewController.h"
 
-@interface AwesomeViewController ()
+@interface ViewController ()
 
 @end
 
-@implementation AwesomeViewController
+@implementation ViewController
 
 - (void)viewDidLoad
 {

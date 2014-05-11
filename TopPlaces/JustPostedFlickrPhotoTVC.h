@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 MrAnderson. All rights reserved.
 //
 
-#import "TopPlacesViewController.h"
+#import "FlickrPhotoTVC.h"
 
-@interface PlacePhotoViewController : TopPlacesViewController
+@interface JustPostedFlickrPhotoTVC : FlickrPhotoTVC
 
 @end

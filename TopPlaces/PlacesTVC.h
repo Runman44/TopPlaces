@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopPhotoOfPlacesViewController : UITableViewController
+@interface PlacesTVC : UITableViewController
 @property (nonatomic, strong)NSArray *photos;
 @property (nonatomic, strong)NSDictionary *place;
 @end

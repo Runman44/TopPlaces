@@ -1,5 +1,5 @@
 //
-//  TopPlacesViewController.h
+//  AwesomeViewController.h
 //  TopPlaces
 //
 //  Created by Dennis Anderson on 4/30/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopPlacesViewController : UITableViewController
-@property (nonatomic, strong) NSArray *photos;
+@interface ViewController : UIViewController
+
 @end
