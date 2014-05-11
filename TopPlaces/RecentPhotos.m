@@ -55,4 +55,13 @@
     [prefs setObject:photos forKey:RECENT_PHOTOS_PREF_KEY];
     [prefs synchronize];
 }
+
+
++ (void) clearPhotos
+{
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+}
+
+
 @end

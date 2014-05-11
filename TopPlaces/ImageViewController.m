@@ -65,8 +65,6 @@
 {
     [super viewDidLoad];
     [self.scrollView addSubview:self.imageView];
-    
-
 }
 
 -(void)fetch{
@@ -115,8 +113,5 @@
 {
     self.navigationItem.leftBarButtonItem = nil;
 }
-
-
-
 
 @end

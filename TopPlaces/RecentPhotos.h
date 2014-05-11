@@ -12,5 +12,6 @@
 
 + (NSArray *) allPhotos;
 + (void) addPhoto:(NSDictionary *)photo;
++ (void) clearPhotos;
 
 @end

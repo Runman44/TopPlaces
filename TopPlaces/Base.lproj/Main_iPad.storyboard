@@ -204,7 +204,13 @@
                             <outlet property="delegate" destination="qgm-0K-xa6" id="uSZ-2c-Y7C"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Most Recent" id="ykK-00-0JD"/>
+                    <navigationItem key="navigationItem" title="Most Recent" id="ykK-00-0JD">
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="et8-ut-Quh">
+                            <connections>
+                                <action selector="clearPhotos:" destination="qgm-0K-xa6" id="7Jc-hu-36C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="lDK-C6-vqf">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>

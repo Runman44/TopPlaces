@@ -17,15 +17,17 @@
 
 @implementation MostRecentTVC
 
-
-
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.photos = [RecentPhotos allPhotos];
     [self.tableView reloadData];
-
 }
 
+- (IBAction)clearPhotos:(UIBarButtonItem *)sender {
+    [RecentPhotos clearPhotos];
+    self.photos = [RecentPhotos allPhotos];
+    [self.tableView reloadData];
+}
 
 #pragma mark - Table view data source
 
