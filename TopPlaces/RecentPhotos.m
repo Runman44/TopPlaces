@@ -16,11 +16,20 @@
 @implementation RecentPhotos
 
 #define RECENT_PHOTOS_PREF_KEY @"Recent_Photos_Key"
+#define FAVORITE_PHOTOS_PREF_KEY @"Favorite_Photos_Key"
 #define RECENT_MAX_PHOTOS 20
 
-+ (NSArray *) allPhotos {
++ (NSArray *) allPhotos
+{
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSArray *photos = [prefs objectForKey:RECENT_PHOTOS_PREF_KEY];
+    return photos;
+}
+
++ (NSArray *) allFavoritePhotos
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSArray *photos = [prefs objectForKey:FAVORITE_PHOTOS_PREF_KEY];
     return photos;
 }
 
@@ -56,12 +65,37 @@
     [prefs synchronize];
 }
 
++ (void) addPhotoToFavorite:(NSDictionary *)photo{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableArray *photos = [[prefs objectForKey:FAVORITE_PHOTOS_PREF_KEY] mutableCopy];
+    if (!photos) {
+        photos = [NSMutableArray array];
+    }
+    
+    NSUInteger key = [photos indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return [[photo valueForKeyPath:FLICKR_PHOTO_ID] isEqualToString:[obj valueForKeyPath:FLICKR_PHOTO_ID]];
+    }];
+    if (key != NSNotFound) [photos removeObjectAtIndex:key];
+    
+    
+    [photos insertObject:photo atIndex:0];
+    while ([photos count] > RECENT_MAX_PHOTOS){
+        [photos removeLastObject];
+    }
+    [prefs setObject:photos forKey:FAVORITE_PHOTOS_PREF_KEY];
+    [prefs synchronize];
+}
+
+
 
 + (void) clearPhotos
 {
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
 }
+
+
 
 
 @end

@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 MrAnderson. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PlacesTVC.h" 
 
-@interface MostRecentTVC : UITableViewController
-@property (nonatomic, strong) NSArray *photos; 
+@interface MostRecentTVC : PlacesTVC
 @end

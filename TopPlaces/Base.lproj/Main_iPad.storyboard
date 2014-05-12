@@ -70,7 +70,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aot-dJ-T9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2772" y="-1308"/>
+            <point key="canvasLocation" x="2780" y="-2128"/>
         </scene>
         <!--Recent PlacesTVC - Top 50 Images-->
         <scene sceneID="JDw-V0-Y5x">
@@ -121,7 +121,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viV-Ha-eWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3344" y="-1308"/>
+            <point key="canvasLocation" x="3352" y="-2128"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="1jU-1E-ouC">
@@ -217,7 +217,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nW-5Z-FtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2772" y="-274"/>
+            <point key="canvasLocation" x="2780" y="-1094"/>
         </scene>
         <!--Tab Bar Controller - Back-->
         <scene sceneID="6Ie-0A-ab6">
@@ -255,7 +255,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8j-Um-Kzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2239" y="-1280"/>
+            <point key="canvasLocation" x="2247" y="-2100"/>
         </scene>
         <!--Navigation Controller - Most Recent-->
         <scene sceneID="WWu-zD-paj">
@@ -274,7 +274,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlp-Bd-3Th" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2247" y="-274"/>
+            <point key="canvasLocation" x="2255" y="-1094"/>
         </scene>
         <!--Navigation Controller - Image View-->
         <scene sceneID="IwJ-4v-op1">

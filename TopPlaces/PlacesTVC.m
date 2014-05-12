@@ -12,10 +12,14 @@
 #import "RecentPhotos.h"
 
 @interface PlacesTVC ()
-
+@property (nonatomic, strong) NSDictionary * currentPhoto;
 @end
 
 @implementation PlacesTVC
+
+- (IBAction)addToFavorite:(UIBarButtonItem *)sender {
+    [RecentPhotos addPhotoToFavorite:self.currentPhoto];
+}
 
 - (void)setPhotos:(NSArray *)photos
 {
@@ -70,10 +74,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    self.currentPhoto = self.photos[indexPath.row];
     if ([segue.identifier isEqualToString:@"picture"]) {
         if([segue.destinationViewController isKindOfClass:[ImageViewController class]]){
             [self prepareImageViewController:segue.destinationViewController
-                          toDisplayPhoto:self.photos[indexPath.row]];
+                          toDisplayPhoto:self.currentPhoto];
         }
         
     }

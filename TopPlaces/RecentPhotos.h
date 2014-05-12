@@ -11,7 +11,10 @@
 @interface RecentPhotos : NSObject
 
 + (NSArray *) allPhotos;
++ (NSArray *) allFavoritePhotos;
 + (void) addPhoto:(NSDictionary *)photo;
++ (void) addPhotoToFavorite:(NSDictionary *)photo;
 + (void) clearPhotos;
+
 
 @end

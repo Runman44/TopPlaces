@@ -8,6 +8,7 @@
 
 #import "ImageViewController.h"
 #import "TopPlacesFlickrFetcher.h"
+#import "RecentPhotos.h"
 
 @interface ImageViewController () <UIScrollViewDelegate, UISplitViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -19,9 +20,15 @@
 
 @implementation ImageViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.scrollView addSubview:self.imageView];
+}
+
 - (void) setScrollView:(UIScrollView *)scrollView{
     _scrollView = scrollView;
-    _scrollView.minimumZoomScale=0.5;
+    _scrollView.minimumZoomScale=0.2;
     _scrollView.maximumZoomScale=3.0;
     _scrollView.delegate = self;
     self.scrollView.contentSize = self.imageView ? self.imageView.image.size : CGSizeZero;
@@ -30,6 +37,16 @@
 - (void) setImageData:(NSDictionary *)imageData{
     _imageData = imageData;
     [self fetch];
+}
+
+- (void)setImage:(UIImage *)image
+{
+    self.scrollView.zoomScale = 1.0;
+    self.imageView.image = image;
+    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
+    [self setZoomScale];
+    [self.spinner stopAnimating];
 }
 
 - (UIImageView *)imageView
@@ -45,26 +62,20 @@
     return self.imageView.image;
 }
 
-- (void)setImage:(UIImage *)image
-{
-    self.scrollView.zoomScale = 1.0;
-    self.imageView.image = image;
-    [self.imageView sizeToFit];
-    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-    self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
-    [self.spinner stopAnimating];
-}
-
+#pragma imageViewController Zooming
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.imageView;
 }
 
-- (void)viewDidLoad
+- (void) setZoomScale
 {
-    [super viewDidLoad];
-    [self.scrollView addSubview:self.imageView];
+    CGRect scrollViewFrame = self.scrollView.frame;
+    CGFloat scaleWidth = scrollViewFrame.size.width / self.scrollView.contentSize.width;
+    CGFloat scaleHeight = scrollViewFrame.size.height / self.scrollView.contentSize.height;
+    CGFloat minScale = MIN(scaleWidth, scaleHeight);
+    self.scrollView.zoomScale = minScale;
 }
 
 -(void)fetch{
@@ -79,14 +90,7 @@
     });
 }
 
-- (void) setZoomScale
-{
-    CGRect scrollViewFrame = self.scrollView.frame;
-    CGFloat scaleWidth = scrollViewFrame.size.width / self.scrollView.contentSize.width;
-    CGFloat scaleHeight = scrollViewFrame.size.height / self.scrollView.contentSize.height;
-    CGFloat minScale = MIN(scaleWidth, scaleHeight);
-    self.scrollView.zoomScale = minScale;
-}
+
 
 #warning de scaling werkt nog niet lekker ! 
 #warning zoom in werkt ook nog niet lekkkuur !
@@ -105,7 +109,9 @@
 
 - (void) splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
 {
-    barButtonItem.title = aViewController.title;
+    //barButtonItem.title = aViewController.title;
+    barButtonItem.image = [UIImage imageNamed:@"HamburgerIcon.png"];
+      barButtonItem.style = UIBarButtonItemStylePlain;
     self.navigationItem.leftBarButtonItem = barButtonItem;
 }
 
