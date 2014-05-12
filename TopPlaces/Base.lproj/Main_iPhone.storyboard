@@ -145,7 +145,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4iB-cS-a5J">
-                        <barButtonItem key="rightBarButtonItem" title="Favorite" id="9Bf-oP-hz1"/>
+                        <barButtonItem key="rightBarButtonItem" title="Favorite" id="9Bf-oP-hz1">
+                            <connections>
+                                <action selector="addToFavorite:" destination="m1H-dq-KJW" id="zDc-W3-Zwv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="3aW-8Z-1mW" id="NpC-X0-Kty"/>
@@ -154,7 +158,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgc-lK-sdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2650" y="374"/>
+            <point key="canvasLocation" x="2764" y="338"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="mMp-2d-pFu">
+            <objects>
+                <viewController id="dae-Sw-Cwa" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9z5-GP-Wlx"/>
+                        <viewControllerLayoutGuide type="bottom" id="exC-Tn-86a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rdh-LA-jSK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XD5-nR-KH1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yrQ-rg-zIv">
+                                <rect key="frame" x="142" y="241" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XD5-nR-KH1" firstAttribute="leading" secondItem="rdh-LA-jSK" secondAttribute="leading" id="NC6-dP-xY0"/>
+                            <constraint firstItem="XD5-nR-KH1" firstAttribute="top" secondItem="rdh-LA-jSK" secondAttribute="top" id="TpA-nm-moV"/>
+                            <constraint firstAttribute="trailing" secondItem="XD5-nR-KH1" secondAttribute="trailing" id="YM3-eI-vjN"/>
+                            <constraint firstAttribute="centerY" secondItem="yrQ-rg-zIv" secondAttribute="centerY" id="bXi-rv-BwV"/>
+                            <constraint firstAttribute="centerX" secondItem="yrQ-rg-zIv" secondAttribute="centerX" id="uxW-RL-jO1"/>
+                            <constraint firstItem="XD5-nR-KH1" firstAttribute="centerY" secondItem="yrQ-rg-zIv" secondAttribute="centerY" id="yOJ-Sx-jGd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IfJ-1Q-8bq">
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="YkT-cJ-ekq">
+                            <connections>
+                                <action selector="clearFromFavorite:" destination="dae-Sw-Cwa" id="RvS-pj-pGq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="scrollView" destination="XD5-nR-KH1" id="dZ6-eG-zM9"/>
+                        <outlet property="spinner" destination="yrQ-rg-zIv" id="qxG-y9-GSI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZ4-W3-ej8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2764" y="1019"/>
         </scene>
         <!--Most RecentTVC - Most Recent-->
         <scene sceneID="m7U-ZA-YLO">
@@ -237,7 +289,7 @@
         <scene sceneID="q4O-DV-PFc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lc3-Ad-kZo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Flickr Photo's" id="1rJ-P0-PsH"/>
+                    <tabBarItem key="tabBarItem" title="Flickr Photo's" image="photo" id="1rJ-P0-PsH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xsY-Xa-7o6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -256,7 +308,7 @@
         <scene sceneID="5HD-D4-fKU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hac-WR-dv6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Most Recent" id="MYZ-2b-h4v"/>
+                    <tabBarItem key="tabBarItem" title="Most Recent" image="swap" id="MYZ-2b-h4v"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qYK-Lv-PJK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -271,10 +323,10 @@
             </objects>
             <point key="canvasLocation" x="599" y="374"/>
         </scene>
-        <!--Table View Controller - Favorites-->
+        <!--Favorite PhotoTVC - Favorites-->
         <scene sceneID="clQ-R2-eJ2">
             <objects>
-                <tableViewController id="5uS-8v-HHZ" sceneMemberID="viewController">
+                <tableViewController id="5uS-8v-HHZ" customClass="FavoritePhotoTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lke-5N-DUU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +356,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="m1H-dq-KJW" kind="push" identifier="picture" id="dpU-yk-hfb"/>
+                                    <segue destination="dae-Sw-Cwa" kind="push" identifier="picture" id="CRT-PQ-RRx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -323,7 +375,7 @@
         <scene sceneID="cxd-2c-yQK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rfc-Q2-1yR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" id="4Fl-mB-btm"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="star" id="4Fl-mB-btm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KEm-Cs-nb3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -339,12 +391,17 @@
             <point key="canvasLocation" x="599" y="1097"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo" width="30" height="30"/>
+        <image name="star" width="30" height="30"/>
+        <image name="swap" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="TF0-zU-4x0"/>
+        <segue reference="cT6-fo-bTc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,7 @@
 + (void) addPhoto:(NSDictionary *)photo;
 + (void) addPhotoToFavorite:(NSDictionary *)photo;
 + (void) clearPhotos;
++ (void) clearFavoritePhoto: (NSDictionary *) photo;
 
 
 @end

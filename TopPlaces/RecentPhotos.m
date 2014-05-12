@@ -42,14 +42,6 @@
     if (!photos) {
         photos = [NSMutableArray array];
     }
-    // why isnt this loop working?!
-    
-//    NSUInteger count = [photos count];
-//    for (NSUInteger i = 0; i < count; i++) {
-//        if([[photo valueForKeyPath:FLICKR_PHOTO_ID] isEqualToString:[[photos objectAtIndex: i] valueForKeyPath:FLICKR_PHOTO_ID]]){
-//            [photos removeObjectAtIndex:i];
-//        }
-//    }
     
     NSUInteger key = [photos indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return [[photo valueForKeyPath:FLICKR_PHOTO_ID] isEqualToString:[obj valueForKeyPath:FLICKR_PHOTO_ID]];
@@ -78,11 +70,7 @@
     }];
     if (key != NSNotFound) [photos removeObjectAtIndex:key];
     
-    
     [photos insertObject:photo atIndex:0];
-    while ([photos count] > RECENT_MAX_PHOTOS){
-        [photos removeLastObject];
-    }
     [prefs setObject:photos forKey:FAVORITE_PHOTOS_PREF_KEY];
     [prefs synchronize];
 }
@@ -91,9 +79,31 @@
 
 + (void) clearPhotos
 {
-    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:nil forKey:RECENT_PHOTOS_PREF_KEY];
 }
+
++ (void) clearFavoritePhoto: (NSDictionary *) photo
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableArray *photos = [[prefs objectForKey:FAVORITE_PHOTOS_PREF_KEY] mutableCopy];
+    if (!photos) {
+        photos = [NSMutableArray array];
+    }
+    
+    NSUInteger key = [photos indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return [[photo valueForKeyPath:FLICKR_PHOTO_ID] isEqualToString:[obj valueForKeyPath:FLICKR_PHOTO_ID]];
+    }];
+    if (key != NSNotFound) [photos removeObjectAtIndex:key];
+    
+    [prefs setObject:photos forKey:FAVORITE_PHOTOS_PREF_KEY];
+    [prefs synchronize];
+
+
+}
+
+
 
 
 

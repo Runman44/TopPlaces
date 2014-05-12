@@ -242,7 +242,7 @@
         <scene sceneID="RKQ-5F-xHM">
             <objects>
                 <navigationController title="Flickr Photo" automaticallyAdjustsScrollViewInsets="NO" id="fWf-os-6Et" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Flickr Photo's" id="mdA-kr-Qjp"/>
+                    <tabBarItem key="tabBarItem" title="Flickr Photo's" image="photo" id="mdA-kr-Qjp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="t83-m0-4tt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -261,7 +261,7 @@
         <scene sceneID="WWu-zD-paj">
             <objects>
                 <navigationController title="Most Recent" automaticallyAdjustsScrollViewInsets="NO" id="eRM-c1-oOS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Most Recent" id="mWG-dQ-yHL"/>
+                    <tabBarItem key="tabBarItem" title="Most Recent" image="swap" id="mWG-dQ-yHL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UaD-My-qia">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -295,6 +295,10 @@
             <point key="canvasLocation" x="1700" y="1088"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo" width="30" height="30"/>
+        <image name="swap" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
