@@ -13,6 +13,7 @@
 @interface ImageViewController () <UIScrollViewDelegate, UISplitViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImage *image;
 
@@ -20,33 +21,36 @@
 
 @implementation ImageViewController
 
-- (IBAction)addToFavorite:(UIBarButtonItem *)sender {
-        [RecentPhotos addPhotoToFavorite:self.imageData];
-}
-
-- (IBAction)clearFromFavorite:(UIBarButtonItem *)sender {
-    [RecentPhotos clearFavoritePhoto:self.imageData];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.scrollView addSubview:self.imageView];
 }
 
-- (void) setScrollView:(UIScrollView *)scrollView{
+# pragma IBActions buttons
+
+- (IBAction)addToFavorite:(UIBarButtonItem *)sender {
+    [RecentPhotos addPhotoToFavorite:self.imageData];
+}
+
+- (IBAction)clearFromFavorite:(UIBarButtonItem *)sender {
+    [RecentPhotos clearFavoritePhoto:self.imageData];
+}
+
+# pragma Properties
+
+
+// 4. when the scrollview is set the contentsize will be as big as the imageview in it.
+- (void) setScrollView:(UIScrollView *)scrollView
+{
     _scrollView = scrollView;
     _scrollView.minimumZoomScale=0.2;
     _scrollView.maximumZoomScale=3.0;
     _scrollView.delegate = self;
-    self.scrollView.contentSize = self.imageView ? self.imageView.image.size : CGSizeZero;
+    self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
 }
 
-- (void) setImageData:(NSDictionary *)imageData{
-    _imageData = imageData;
-    [self fetch];
-}
-
+// 3. here the size of the imageview will be the same as the image in it. The zoomscale will be reset.
 - (void)setImage:(UIImage *)image
 {
     self.scrollView.zoomScale = 1.0;
@@ -57,6 +61,7 @@
     [self.spinner stopAnimating];
 }
 
+// returns imageView
 - (UIImageView *)imageView
 {
     if (!_imageView) {
@@ -65,27 +70,35 @@
     return _imageView;
 }
 
+// returns image
 - (UIImage *)image
 {
     return self.imageView.image;
 }
 
-#pragma imageViewController Zooming
-
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
-    return self.imageView;
-}
-
 - (void) setZoomScale
 {
-    CGRect scrollViewFrame = self.scrollView.frame;
-    CGFloat scaleWidth = scrollViewFrame.size.width / self.scrollView.contentSize.width;
-    CGFloat scaleHeight = scrollViewFrame.size.height / self.scrollView.contentSize.height;
-    CGFloat minScale = MIN(scaleWidth, scaleHeight);
-    self.scrollView.zoomScale = minScale;
+    double yScale = self.scrollView.bounds.size.height / self.image.size.height;
+    double xScale = self.scrollView.bounds.size.width / self.image.size.width;
+    double hScale;
+    if(yScale > xScale){
+         hScale = yScale;
+    } else {
+         hScale = xScale;
+    }
+    self.scrollView.zoomScale = hScale;
 }
 
+// 1. when the imageData is set, the download for the image can begin
+- (void) setImageData:(NSDictionary *)imageData
+{
+    _imageData = imageData;
+    [self fetch];
+}
+
+# pragma fetching results
+
+// 2. downloading the image and setting the UIImage to be that image
 -(void)fetch{
     [self.spinner startAnimating];
     dispatch_queue_t fetchPhoto = dispatch_queue_create("picture of photo", NULL);
@@ -98,10 +111,12 @@
     });
 }
 
+#pragma imageViewController - Delegate
 
-
-#warning de scaling werkt nog niet lekker ! 
-#warning zoom in werkt ook nog niet lekkkuur !
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.imageView;
+}
 
 #pragma SplitViewController - Delegate
 
@@ -117,9 +132,8 @@
 
 - (void) splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
 {
-    //barButtonItem.title = aViewController.title;
     barButtonItem.image = [UIImage imageNamed:@"HamburgerIcon.png"];
-      barButtonItem.style = UIBarButtonItemStylePlain;
+    barButtonItem.style = UIBarButtonItemStylePlain;
     self.navigationItem.leftBarButtonItem = barButtonItem;
 }
 

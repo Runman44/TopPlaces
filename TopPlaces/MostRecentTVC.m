@@ -15,8 +15,6 @@
 
 @implementation MostRecentTVC
 
-#warning favorite tab?! + hamburger icon
-
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.photos = [RecentPhotos allPhotos];

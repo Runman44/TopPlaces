@@ -112,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BBABB7891921902500D4CEA9 /* Flickr Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				BBABB786192108CC00D4CEA9 /* FavoritePhotoTVC.h */,
+				BBABB787192108CC00D4CEA9 /* FavoritePhotoTVC.m */,
+			);
+			name = "Flickr Favorite";
+			sourceTree = "<group>";
+		};
 		BBB2DD29191FCE69001A0C0C /* Flickr Photo */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +183,7 @@
 				BBBD87C919110CB100BA26C4 /* Flickr Fetcher */,
 				BBB2DD29191FCE69001A0C0C /* Flickr Photo */,
 				BBB2DD2A191FCE9B001A0C0C /* Flickr Recent  */,
-				BBABB786192108CC00D4CEA9 /* FavoritePhotoTVC.h */,
-				BBABB787192108CC00D4CEA9 /* FavoritePhotoTVC.m */,
+				BBABB7891921902500D4CEA9 /* Flickr Favorite */,
 				BBBD879D1911098100BA26C4 /* Main_iPhone.storyboard */,
 				BBBD87A01911098100BA26C4 /* Main_iPad.storyboard */,
 				BBCF2DDF19180B8A0086775A /* ImageViewController.h */,
