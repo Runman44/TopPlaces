@@ -192,13 +192,7 @@
                             <constraint firstItem="XD5-nR-KH1" firstAttribute="centerY" secondItem="yrQ-rg-zIv" secondAttribute="centerY" id="yOJ-Sx-jGd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IfJ-1Q-8bq">
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="YkT-cJ-ekq">
-                            <connections>
-                                <action selector="clearFromFavorite:" destination="dae-Sw-Cwa" id="RvS-pj-pGq"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="IfJ-1Q-8bq"/>
                     <connections>
                         <outlet property="scrollView" destination="XD5-nR-KH1" id="dZ6-eG-zM9"/>
                         <outlet property="spinner" destination="yrQ-rg-zIv" id="qxG-y9-GSI"/>
@@ -257,9 +251,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="MS6-nt-EfY">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfA-fQ-SKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

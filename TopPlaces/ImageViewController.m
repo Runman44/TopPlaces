@@ -31,10 +31,10 @@
 
 - (IBAction)addToFavorite:(UIBarButtonItem *)sender {
     [RecentPhotos addPhotoToFavorite:self.imageData];
-}
-
-- (IBAction)clearFromFavorite:(UIBarButtonItem *)sender {
-    [RecentPhotos clearFavoritePhoto:self.imageData];
+    
+    UIAlertView *alertFavo = [[UIAlertView alloc] initWithTitle:@"Success" message:@"photo added to favorites" delegate:self cancelButtonTitle:@"close" otherButtonTitles:nil, nil];
+    [alertFavo show];
+    
 }
 
 # pragma Properties

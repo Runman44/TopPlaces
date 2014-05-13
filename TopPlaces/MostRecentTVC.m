@@ -25,5 +25,8 @@
     [RecentPhotos clearPhotos];
     self.photos = [RecentPhotos allPhotos];
     [self.tableView reloadData];
+    
+    UIAlertView *alertFavo = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Most recent photos are cleared" delegate:self cancelButtonTitle:@"close" otherButtonTitles:nil, nil];
+    [alertFavo show];
 }
 @end

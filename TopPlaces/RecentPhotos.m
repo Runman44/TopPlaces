@@ -83,6 +83,7 @@
     [prefs setObject:nil forKey:RECENT_PHOTOS_PREF_KEY];
 }
 
+
 + (void) clearFavoritePhoto: (NSDictionary *) photo
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
