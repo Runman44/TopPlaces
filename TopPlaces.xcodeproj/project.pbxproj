@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BBAB153E1916E799001CDDCF /* PlacesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAB153D1916E799001CDDCF /* PlacesTVC.m */; };
-		BBAB15411916E7DE001CDDCF /* RecentPlacesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAB15401916E7DE001CDDCF /* RecentPlacesTVC.m */; };
-		BBABB788192108CC00D4CEA9 /* FavoritePhotoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBABB787192108CC00D4CEA9 /* FavoritePhotoTVC.m */; };
 		BBBD878C1911098100BA26C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBD878B1911098100BA26C4 /* Foundation.framework */; };
 		BBBD878E1911098100BA26C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBD878D1911098100BA26C4 /* CoreGraphics.framework */; };
 		BBBD87901911098100BA26C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBD878F1911098100BA26C4 /* UIKit.framework */; };
@@ -25,13 +22,16 @@
 		BBBD87B01911098100BA26C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBD878F1911098100BA26C4 /* UIKit.framework */; };
 		BBBD87B81911098100BA26C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBBD87B61911098100BA26C4 /* InfoPlist.strings */; };
 		BBBD87BA1911098100BA26C4 /* TopPlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBD87B91911098100BA26C4 /* TopPlacesTests.m */; };
-		BBBD87C519110A0B00BA26C4 /* FlickrPHotoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBD87C419110A0B00BA26C4 /* FlickrPHotoTVC.m */; };
-		BBBD87C819110ADC00BA26C4 /* JustPostedFlickrPhotoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBBD87C719110ADC00BA26C4 /* JustPostedFlickrPhotoTVC.m */; };
-		BBC154B0191D4A0C004FAB01 /* MostRecentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC154AF191D4A0C004FAB01 /* MostRecentTVC.m */; };
-		BBC154B3191D4D49004FAB01 /* RecentPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC154B2191D4D49004FAB01 /* RecentPhotos.m */; };
 		BBCF2DE119180B8A0086775A /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCF2DE019180B8A0086775A /* ImageViewController.m */; };
 		BBD0183E1954608B00108483 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0183B1954608B00108483 /* FlickrFetcher.m */; };
 		BBD0183F1954608B00108483 /* TopPlacesFlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0183D1954608B00108483 /* TopPlacesFlickrFetcher.m */; };
+		BBD01843195463CE00108483 /* FavoritePhotoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD01842195463CE00108483 /* FavoritePhotoTVC.m */; };
+		BBD01852195463E700108483 /* FlickrPHotoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD01846195463E700108483 /* FlickrPHotoTVC.m */; };
+		BBD01853195463E700108483 /* JustPostedFlickrPhotoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD01848195463E700108483 /* JustPostedFlickrPhotoTVC.m */; };
+		BBD01854195463E700108483 /* PlacesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0184A195463E700108483 /* PlacesTVC.m */; };
+		BBD01855195463E700108483 /* RecentPlacesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0184C195463E700108483 /* RecentPlacesTVC.m */; };
+		BBD01856195463E700108483 /* MostRecentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0184F195463E700108483 /* MostRecentTVC.m */; };
+		BBD01857195463E700108483 /* RecentPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD01851195463E700108483 /* RecentPhotos.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,12 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BBAB153C1916E799001CDDCF /* PlacesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTVC.h; sourceTree = "<group>"; };
-		BBAB153D1916E799001CDDCF /* PlacesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesTVC.m; sourceTree = "<group>"; };
-		BBAB153F1916E7DE001CDDCF /* RecentPlacesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPlacesTVC.h; sourceTree = "<group>"; };
-		BBAB15401916E7DE001CDDCF /* RecentPlacesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPlacesTVC.m; sourceTree = "<group>"; };
-		BBABB786192108CC00D4CEA9 /* FavoritePhotoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritePhotoTVC.h; sourceTree = "<group>"; };
-		BBABB787192108CC00D4CEA9 /* FavoritePhotoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritePhotoTVC.m; sourceTree = "<group>"; };
 		BBBD87881911098100BA26C4 /* TopPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBD878B1911098100BA26C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BBBD878D1911098100BA26C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,14 +65,6 @@
 		BBBD87B51911098100BA26C4 /* TopPlacesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TopPlacesTests-Info.plist"; sourceTree = "<group>"; };
 		BBBD87B71911098100BA26C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BBBD87B91911098100BA26C4 /* TopPlacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopPlacesTests.m; sourceTree = "<group>"; };
-		BBBD87C319110A0B00BA26C4 /* FlickrPHotoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPHotoTVC.h; sourceTree = "<group>"; };
-		BBBD87C419110A0B00BA26C4 /* FlickrPHotoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPHotoTVC.m; sourceTree = "<group>"; };
-		BBBD87C619110ADC00BA26C4 /* JustPostedFlickrPhotoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JustPostedFlickrPhotoTVC.h; sourceTree = "<group>"; };
-		BBBD87C719110ADC00BA26C4 /* JustPostedFlickrPhotoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JustPostedFlickrPhotoTVC.m; sourceTree = "<group>"; };
-		BBC154AE191D4A0C004FAB01 /* MostRecentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostRecentTVC.h; sourceTree = "<group>"; };
-		BBC154AF191D4A0C004FAB01 /* MostRecentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRecentTVC.m; sourceTree = "<group>"; };
-		BBC154B1191D4D49004FAB01 /* RecentPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotos.h; sourceTree = "<group>"; };
-		BBC154B2191D4D49004FAB01 /* RecentPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotos.m; sourceTree = "<group>"; };
 		BBCF2DDF19180B8A0086775A /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		BBCF2DE019180B8A0086775A /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		BBD018391954608B00108483 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
@@ -86,6 +72,20 @@
 		BBD0183B1954608B00108483 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 		BBD0183C1954608B00108483 /* TopPlacesFlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopPlacesFlickrFetcher.h; sourceTree = "<group>"; };
 		BBD0183D1954608B00108483 /* TopPlacesFlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPlacesFlickrFetcher.m; sourceTree = "<group>"; };
+		BBD01841195463CE00108483 /* FavoritePhotoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritePhotoTVC.h; sourceTree = "<group>"; };
+		BBD01842195463CE00108483 /* FavoritePhotoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritePhotoTVC.m; sourceTree = "<group>"; };
+		BBD01845195463E700108483 /* FlickrPHotoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPHotoTVC.h; sourceTree = "<group>"; };
+		BBD01846195463E700108483 /* FlickrPHotoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPHotoTVC.m; sourceTree = "<group>"; };
+		BBD01847195463E700108483 /* JustPostedFlickrPhotoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JustPostedFlickrPhotoTVC.h; sourceTree = "<group>"; };
+		BBD01848195463E700108483 /* JustPostedFlickrPhotoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JustPostedFlickrPhotoTVC.m; sourceTree = "<group>"; };
+		BBD01849195463E700108483 /* PlacesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTVC.h; sourceTree = "<group>"; };
+		BBD0184A195463E700108483 /* PlacesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesTVC.m; sourceTree = "<group>"; };
+		BBD0184B195463E700108483 /* RecentPlacesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPlacesTVC.h; sourceTree = "<group>"; };
+		BBD0184C195463E700108483 /* RecentPlacesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPlacesTVC.m; sourceTree = "<group>"; };
+		BBD0184E195463E700108483 /* MostRecentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostRecentTVC.h; sourceTree = "<group>"; };
+		BBD0184F195463E700108483 /* MostRecentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRecentTVC.m; sourceTree = "<group>"; };
+		BBD01850195463E700108483 /* RecentPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotos.h; sourceTree = "<group>"; };
+		BBD01851195463E700108483 /* RecentPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotos.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,41 +112,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BBABB7891921902500D4CEA9 /* Flickr Favorite */ = {
-			isa = PBXGroup;
-			children = (
-				BBABB786192108CC00D4CEA9 /* FavoritePhotoTVC.h */,
-				BBABB787192108CC00D4CEA9 /* FavoritePhotoTVC.m */,
-			);
-			name = "Flickr Favorite";
-			sourceTree = "<group>";
-		};
-		BBB2DD29191FCE69001A0C0C /* Flickr Photo */ = {
-			isa = PBXGroup;
-			children = (
-				BBBD87C319110A0B00BA26C4 /* FlickrPHotoTVC.h */,
-				BBBD87C419110A0B00BA26C4 /* FlickrPHotoTVC.m */,
-				BBBD87C619110ADC00BA26C4 /* JustPostedFlickrPhotoTVC.h */,
-				BBBD87C719110ADC00BA26C4 /* JustPostedFlickrPhotoTVC.m */,
-				BBAB153C1916E799001CDDCF /* PlacesTVC.h */,
-				BBAB153D1916E799001CDDCF /* PlacesTVC.m */,
-				BBAB153F1916E7DE001CDDCF /* RecentPlacesTVC.h */,
-				BBAB15401916E7DE001CDDCF /* RecentPlacesTVC.m */,
-			);
-			name = "Flickr Photo";
-			sourceTree = "<group>";
-		};
-		BBB2DD2A191FCE9B001A0C0C /* Flickr Recent  */ = {
-			isa = PBXGroup;
-			children = (
-				BBC154AE191D4A0C004FAB01 /* MostRecentTVC.h */,
-				BBC154AF191D4A0C004FAB01 /* MostRecentTVC.m */,
-				BBC154B1191D4D49004FAB01 /* RecentPhotos.h */,
-				BBC154B2191D4D49004FAB01 /* RecentPhotos.m */,
-			);
-			name = "Flickr Recent ";
-			sourceTree = "<group>";
-		};
 		BBBD877F1911098000BA26C4 = {
 			isa = PBXGroup;
 			children = (
@@ -180,10 +145,10 @@
 		BBBD87911911098100BA26C4 /* TopPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				BBD01844195463E700108483 /* Flickr Photo */,
+				BBD0184D195463E700108483 /* Flickr Recent */,
+				BBD01840195463CE00108483 /* Flickr Favorite */,
 				BBD018381954608B00108483 /* Flickr Fetcher */,
-				BBB2DD29191FCE69001A0C0C /* Flickr Photo */,
-				BBB2DD2A191FCE9B001A0C0C /* Flickr Recent  */,
-				BBABB7891921902500D4CEA9 /* Flickr Favorite */,
 				BBBD879D1911098100BA26C4 /* Main_iPhone.storyboard */,
 				BBBD87A01911098100BA26C4 /* Main_iPad.storyboard */,
 				BBCF2DDF19180B8A0086775A /* ImageViewController.h */,
@@ -237,6 +202,41 @@
 				BBD0183D1954608B00108483 /* TopPlacesFlickrFetcher.m */,
 			);
 			path = "Flickr Fetcher";
+			sourceTree = "<group>";
+		};
+		BBD01840195463CE00108483 /* Flickr Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				BBD01841195463CE00108483 /* FavoritePhotoTVC.h */,
+				BBD01842195463CE00108483 /* FavoritePhotoTVC.m */,
+			);
+			path = "Flickr Favorite";
+			sourceTree = "<group>";
+		};
+		BBD01844195463E700108483 /* Flickr Photo */ = {
+			isa = PBXGroup;
+			children = (
+				BBD01845195463E700108483 /* FlickrPHotoTVC.h */,
+				BBD01846195463E700108483 /* FlickrPHotoTVC.m */,
+				BBD01847195463E700108483 /* JustPostedFlickrPhotoTVC.h */,
+				BBD01848195463E700108483 /* JustPostedFlickrPhotoTVC.m */,
+				BBD01849195463E700108483 /* PlacesTVC.h */,
+				BBD0184A195463E700108483 /* PlacesTVC.m */,
+				BBD0184B195463E700108483 /* RecentPlacesTVC.h */,
+				BBD0184C195463E700108483 /* RecentPlacesTVC.m */,
+			);
+			path = "Flickr Photo";
+			sourceTree = "<group>";
+		};
+		BBD0184D195463E700108483 /* Flickr Recent */ = {
+			isa = PBXGroup;
+			children = (
+				BBD0184E195463E700108483 /* MostRecentTVC.h */,
+				BBD0184F195463E700108483 /* MostRecentTVC.m */,
+				BBD01850195463E700108483 /* RecentPhotos.h */,
+				BBD01851195463E700108483 /* RecentPhotos.m */,
+			);
+			path = "Flickr Recent";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,19 +338,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD01857195463E700108483 /* RecentPhotos.m in Sources */,
 				BBCF2DE119180B8A0086775A /* ImageViewController.m in Sources */,
-				BBAB153E1916E799001CDDCF /* PlacesTVC.m in Sources */,
-				BBABB788192108CC00D4CEA9 /* FavoritePhotoTVC.m in Sources */,
-				BBAB15411916E7DE001CDDCF /* RecentPlacesTVC.m in Sources */,
 				BBBD879C1911098100BA26C4 /* AwesomeAppDelegate.m in Sources */,
-				BBBD87C819110ADC00BA26C4 /* JustPostedFlickrPhotoTVC.m in Sources */,
-				BBC154B0191D4A0C004FAB01 /* MostRecentTVC.m in Sources */,
+				BBD01855195463E700108483 /* RecentPlacesTVC.m in Sources */,
 				BBD0183F1954608B00108483 /* TopPlacesFlickrFetcher.m in Sources */,
 				BBBD87981911098100BA26C4 /* main.m in Sources */,
-				BBC154B3191D4D49004FAB01 /* RecentPhotos.m in Sources */,
-				BBBD87C519110A0B00BA26C4 /* FlickrPHotoTVC.m in Sources */,
+				BBD01853195463E700108483 /* JustPostedFlickrPhotoTVC.m in Sources */,
 				BBD0183E1954608B00108483 /* FlickrFetcher.m in Sources */,
+				BBD01852195463E700108483 /* FlickrPHotoTVC.m in Sources */,
+				BBD01854195463E700108483 /* PlacesTVC.m in Sources */,
 				BBBD87A51911098100BA26C4 /* ViewController.m in Sources */,
+				BBD01843195463CE00108483 /* FavoritePhotoTVC.m in Sources */,
+				BBD01856195463E700108483 /* MostRecentTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
