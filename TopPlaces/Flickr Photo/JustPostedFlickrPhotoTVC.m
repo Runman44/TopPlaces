@@ -21,6 +21,7 @@
 	[self fetchPhotos];
 }
 
+// fetch photos from Flickr and set them in self.photos
 - (IBAction)fetchPhotos
 {
     [self.refreshControl beginRefreshing];

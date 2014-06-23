@@ -10,17 +10,19 @@
 
 @implementation TopPlacesFlickrFetcher
 
-
+// substrings the country name of the place dictionary
 + (NSString *)countryOfPlace:(NSDictionary *)place{
     return [[[place valueForKeyPath:FLICKR_PLACE_NAME]
              componentsSeparatedByString:@", "] lastObject];
 }
 
+// substrings the title name of the place dictionary
 + (NSString *)titleOfPlace:(NSDictionary *)place{
     return [[[place valueForKeyPath:FLICKR_PLACE_NAME]
              componentsSeparatedByString:@", "] firstObject];
 }
 
+// substrings the sibtitle name of the place dictionary
 + (NSString *)subtitleOfPlace:(NSDictionary *)place{
     
     NSString *photoContent = [place valueForKeyPath:FLICKR_PLACE_NAME];
@@ -34,6 +36,7 @@
 }
 
 #define FLICKR_UNKNOWN_PHOTO_TITLE @"Unknown"
+// gets the title of a photo
 + (NSString *)titleOfPhoto:(NSDictionary *)photo
 {
     NSString *title = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
@@ -45,6 +48,7 @@
     return FLICKR_UNKNOWN_PHOTO_TITLE;
 }
 
+// gets the subtitle of a photo
 + (NSString *)subtitleOfPhoto:(NSDictionary *)photo
 {
     NSString *title = [self titleOfPhoto:photo];
@@ -56,7 +60,7 @@
     return subtitle;
 }
 
-// sorteert de places op basis van de place name.
+// sorts the places on place name
 + (NSArray *)sortPlaces:(NSArray *)places{
 
     return [places sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -66,7 +70,8 @@
     }];
 }
 
-// Er is een dictionary met countries als keys. En voor elke place bekijkt het de country en zet hij de place in een array die bij de desbetreffende key hoort. 
+
+// there is a dictionary with countries as keys. For every place it looks the country and sets it in the right place by the right key.
 + (NSDictionary *)placesByCountry:(NSDictionary *)places{
     {
         NSMutableDictionary *placesByCountry = [NSMutableDictionary dictionary];
@@ -83,7 +88,7 @@
     }
 }
 
-// pakt alle keys en sorteerd deze.
+// get all keys and sorts it
 + (NSArray *)sortCountries:(NSDictionary *)placesByCountry{
     NSArray *countries = [placesByCountry allKeys];
     NSArray *sortedArray = [countries sortedArrayUsingSelector:

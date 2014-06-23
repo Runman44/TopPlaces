@@ -39,8 +39,10 @@
         
         [RecentPhotos clearFavoritePhoto:self.photos[indexPath.row]];
         
+        // gives the user an alert box
         UIAlertView *alertFavo = [[UIAlertView alloc] initWithTitle:@"Success" message:@"photo deleted from favorites" delegate:self cancelButtonTitle:@"close" otherButtonTitles:nil, nil];
         [alertFavo show];
+        // after the delete, you must call the recentphotos method again to reset the values.
         self.photos = [RecentPhotos allFavoritePhotos];
         [self.tableView reloadData];
     }
